@@ -28,25 +28,9 @@ public class MyQueue<T> {
             return null;
         } else {
             T item = (T) elements[head];
-            elements[head] = null; // Clear the reference
+            elements[head] = null; 
             head = (head + 1) % size;
             return item;
         }
-    }
-
-    public static void main(String[] args) {
-        MyQueue<String> stringQueue = new MyQueue<>(5);
-        stringQueue.enqueue("Apple");
-        stringQueue.enqueue("Banana");
-        stringQueue.enqueue("Orange");
-
-        System.out.println(stringQueue.dequeue()); // Output: Apple
-        System.out.println(stringQueue.dequeue()); // Output: Banana
-
-        MyQueue<Integer> intQueue = new MyQueue<>(5);
-        intQueue.enqueue(1);
-        intQueue.enqueue(2);
-
-        System.out.println(intQueue.dequeue()); // Output: 1
     }
 }
